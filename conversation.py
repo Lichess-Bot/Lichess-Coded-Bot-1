@@ -43,7 +43,7 @@ class Conversation:
             else:
                 self.send_reply(line, "No challenges queued. Wait for my current game to finish then kindly challenge.")
         elif cmd == "about":
-            self.send_reply(line, "Hello I am a bot made by @Soloboy4 if you have any doubt regarding me ask my master plz")
+            self.send_reply(line, "Hello I am a bot made by @Soloboy4 if you have any doubt regarding me ask my master plz also join my official team to talk with me https://lichess.org/team/Endogeneti-Bot for  information and chat")
                 
     def send_reply(self, line, reply):
         self.xhr.chat(self.game.id, line.room, reply)
