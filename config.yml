@@ -171,3 +171,9 @@ challenge:                   # incoming challenges
   modes:                     # game modes to accept
     - casual                 # unrated games
 #    - rated                  # rated games - must comment if the engine doesn't try to win
+greeting: 
+# Optional substitution keywords (include curly braces): 
+# {opponent} to insert opponent's name 
+# {me} to insert bot's name # Any other words in curly braces will be removed. 
+hello: "Hello! I'm @{me} made by @Soloboy4. Type !help for a list of commands I can respond to." # Message to send to chat at the start of a game 
+goodbye: "That was a good game.Hope we meet soon!" #Message to sendto chat at the end of a game
