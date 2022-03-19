@@ -6,9 +6,7 @@ engine:                      # Engine settings.
   name: "sf"        # Binary name of the engine to use.
   Atomic: "msf"  # Binary name of the engine for atomic variant to use.
   Antichess: "msf"   # Binary name of the engine for antichess variant to use.
-             "antibest"
   Crazyhouse: "fsf"  # Binary name of the engine for crazyhouse variant to use.
-              "allplay"
   Horde: "fsf"   # Binary name of the engine for horde variant to use.
   King of the Hill: "fsf"   # Binary name of the engine for koth variant to use.
   Racing Kings: "fsf"  # Binary name of the engine for racing kings variant to use.
