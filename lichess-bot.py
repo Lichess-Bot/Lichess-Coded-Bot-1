@@ -246,6 +246,20 @@ def play_game(li, game_id, control_queue, user_profile, config, challenge_queue,
     engine = engine_wrapper.create_engine(config, game.variant_name)
     engine.get_opponent_info(game)
     conversation = Conversation(game, engine, li, __version__, challenge_queue)
+    
+    class SendLine:
+        def __init__(self, room):
+            self.room = room
+    opponent = game.black.name if game.white.name == user_profile["username"] else game.white.name
+    conversation.send_reply(SendLine('player'), f'Best of luck @{opponent}')
+    conversation.send_reply(SendLine('spectator'), f'Welcome to my games spectators!')
+    
+    variant=game.perf_name
+      
+    if variant=="antichess":
+        engine_path = os.path.join(cfg["dir"], cfg["antiname"])
+        engineeng = engine.SimpleEngine.popen_uci(engine_path)    
+
 
     logger.info(f"+++ {game}")
 
