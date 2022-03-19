@@ -255,11 +255,7 @@ def play_game(li, game_id, control_queue, engine_factory, user_profile, config, 
     delay_seconds = config.get("rate_limiting_delay", 0)/1000
     polyglot_cfg = engine_cfg.get("polyglot", {})
     
-    greeting_cfg = config.get("greeting") or {}
-    keyword_map = defaultdict(str, me=game.me.name, opponent=game.opponent.name)
-    get_greeting = lambda greeting: str(greeting_cfg.get(greeting) or "").format_map(keyword_map)
-    hello = get_greeting("hello")
-    goodbye = get_greeting("goodbye")
+    
 
 
     first_move = True
