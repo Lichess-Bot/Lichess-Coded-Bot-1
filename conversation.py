@@ -20,13 +20,15 @@ class Conversation:
 
     def command(self, line, game, cmd):
         if cmd == "commands" or cmd == "help":
-            self.send_reply(line, "Supported commands: !wait (wait a minute for my first move), !name, !howto, !eval, !queue")
+            self.send_reply(line, "Supported commands: !wait (wait a minute for my first move), !name, !howto, !eval, !queue, !creator, !about")
         elif cmd == "wait" and game.is_abortable():
             game.ping(60, 120, 120)
             self.send_reply(line, "Waiting 60 seconds...")
         elif cmd == "name":
             name = game.me.name
             self.send_reply(line, f"{name} running {self.engine.name()} (lichess-bot v{self.version})")
+        elif cmd == "creator":
+            self.send_reply(line, "@Soloboy4")    
         elif cmd == "howto":
             self.send_reply(line, "How to run: Check out 'Lichess Bot API'")
         elif cmd == "eval" and line.room == "spectator":
@@ -40,6 +42,9 @@ class Conversation:
                 self.send_reply(line, f"Challenge queue: {challengers}")
             else:
                 self.send_reply(line, "No challenges queued.")
+        elif cmd == "about":
+            self.send_reply(line, "Hello I am a bot made by @Soloboy4 if you have any doubt regarding me ask my master plz also join my official team to talk with me https://lichess.org/team/Endogeneti-Bot for  information and chat")
+                        
 
     def send_reply(self, line, reply):
         self.xhr.chat(self.game.id, line.room, reply)
