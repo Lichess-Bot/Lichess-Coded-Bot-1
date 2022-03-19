@@ -32,7 +32,7 @@ engine:                      # Engine settings.
         - atomic.bin
       antichess: # list of book file paths for variant antichess 
         - antichess.bin
-        -
+        - engines/antibest.bin
       horde: # list of book file paths for variant horde
         - horde.bin
       racingkings: # list of book file paths for variant racingkings 
@@ -40,7 +40,11 @@ engine:                      # Engine settings.
       3check: # list of book file paths for variant 3check
         - threeCheck.bin
       kingofthehill: # list of book file paths for variant kingofthehill
-        - kingofthehill.bin 
+        - kingofthehill.bin
+      crazyhouse: #list of the book file paths for variant crazyhouse 
+        - engine/allplay.bin
+      chess960: #list of the book file paths for variant chess960
+        - Cerebellum3Merge.bin
 #     atomic:                # List of book file paths for variant atomic.
 #       - engines/atomicbook1.bin
 #       - engines/atomicbook2.bin
@@ -63,7 +67,7 @@ engine:                      # Engine settings.
     chessdb_book:
       enabled: false
       min_time: 20
-      move_quality: "good"   # One of "all", "good", "best".
+      move_quality: "best"   # One of "all", "good", "best".
       min_depth: 20          # Only for move_quality: "best".
       contribute: true
     lichess_cloud_analysis:
