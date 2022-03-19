@@ -1,4 +1,4 @@
-token: "lip_LxOdszffnb7u1m35raeW"    # Lichess OAuth2 Token.
+token: "lip_BkSdYAf7dnPZtbXFPmlr"    # Lichess OAuth2 Token.
 url: "https://lichess.org/"  # Lichess base URL.
 
 engine:                      # Engine settings.
@@ -30,15 +30,16 @@ engine:                      # Engine settings.
         - lichess_torombot_2022-03-04.bin
       atomic: # list of book file paths for variant atomic
         - atomic.bin
-      antichess:
+      antichess: # list of book file paths for variant antichess 
         - antichess.bin
-      horde:
+        -
+      horde: # list of book file paths for variant horde
         - horde.bin
-      racingkings:
+      racingkings: # list of book file paths for variant racingkings 
         - racingKings.bin
-      3check:
+      3check: # list of book file paths for variant 3check
         - threeCheck.bin
-      kingofthehill:
+      kingofthehill: # list of book file paths for variant kingofthehill
         - kingofthehill.bin 
 #     atomic:                # List of book file paths for variant atomic.
 #       - engines/atomicbook1.bin
@@ -53,7 +54,7 @@ engine:                      # Engine settings.
     resign_score: -1000      # If the score is less than or equal to this value, the bot resigns (in cp).
     resign_for_egtb_minus_two: true # If true the bot will resign in positions where the online_egtb returns a wdl of -2.
     resign_moves: 3          # How many moves in a row the score has to be below the resign value.
-    offer_draw_enabled: true
+    offer_draw_enabled: false
     offer_draw_score: 0      # If the absolute value of the score is less than or equal to this value, the bot offers/accepts draw (in cp).
     offer_draw_for_egtb_zero: true # If true the bot will offer/accept draw in positions where the online_egtb returns a wdl of 0.
     offer_draw_moves: 5      # How many moves in a row the absolute value of the score has to be below the draw value.
@@ -145,7 +146,7 @@ challenge:                   # Incoming challenges.
   sort_by: "best"            # Possible values: "best" and "first".
   accept_bot: true          # Accepts challenges coming from other bots.
   only_bot: false            # Accept challenges by bots only.
-  max_increment: 180         # Maximum amount of increment to accept a challenge. The max is 180. Set to 0 for no increment.
+  max_increment: 5         # Maximum amount of increment to accept a challenge. The max is 180. Set to 0 for no increment.
   min_increment: 0           # Minimum amount of increment to accept a challenge.
   max_base: 315360000        # Maximum amount of base time to accept a challenge. The max is 315360000 (10 years).
   min_base: 0                # Minimum amount of base time to accept a challenge.
@@ -167,15 +168,15 @@ challenge:                   # Incoming challenges.
     - classical
 #   - correspondence
   modes:                     # Game modes to accept.
-    - casual                 # Unrated games.
-    - rated                  # Rated games - must comment if the engine doesn't try to win.
+    - casual                 # Unrated games.    
+#   - rated                  # Rated games - must comment if the engine doesn't try to win.
 
 greeting:
     # Optional substitution keywords (include curly braces):
     #   {opponent} to insert opponent's name
     #   {me} to insert bot's name
     # Any other words in curly braces will be removed.
-    hello: "Hi! I'm {me}. Good luck! Type !help for a list of commands I can respond to." # Message to send to chat at the start of a game
-    goodbye: "Good game!" # Message to send to chat at the end of a game
+    hello: "Hello! I'm @{me} made by @Soloboy4. Type !help for a list of commands I can respond to." # Message to send to chat at the start of a game
+    goodbye: "That was a good game.Hope we meet soon!" # Message to send to chat at the end of a game
 
 # pgn_directory: "game_records" # A directory where PGN-format records of the bot's games are kept
