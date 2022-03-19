@@ -173,9 +173,12 @@ challenge:                   # Incoming challenges.
     - rapid
     - classical
 #   - correspondence
-  modes:                     # Game modes to accept.
-    - casual                 # Unrated games.    
-#   - rated                  # Rated games - must comment if the engine doesn't try to win.
+  bot_modes:                              # Game modes to accept against BOTs.
+   - casual                              # Unrated games.
+#  - rated                               # Rated games
+  human_modes:                            # Game modes to accept against humans.
+    - casual                              # Unrated games.
+    - rated                               # Rated games
 
 greeting:
     # Optional substitution keywords (include curly braces):
