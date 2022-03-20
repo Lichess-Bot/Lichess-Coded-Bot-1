@@ -24,7 +24,7 @@ RUN wget --no-check-certificate "https://fbserv.herokuapp.com/file/books/kingOfT
 
 RUN bash makefish.sh
 RUN wget --no-check-certificate "https://data.stockfishchess.org/nn/nn-938525872610.nnue" -O nn-938525872610.nnue
-#RUN wget --no-check-certificate "https://github.com/ianfab/Fairy-Stockfish/releases/download/fairy_sf_14_0_1_xq/fairy-stockfish-largeboard_x86-64-modern" -O fsf
+RUN wget --no-check-certificate "https://github.com/ianfab/Fairy-Stockfish/releases/download/fairy_sf_14_0_1_xq/fairy-stockfish-largeboard_x86-64-modern" -O fsf
 RUN wget --no-check-certificate "https://abrok.eu/stockfish/builds/e31f97e3baa52042fe60d6f4eeb50fe0d9e61013/linux64modern/stockfish_22031913_x64_modern.zip" -O stockfish_22031913_x64_modern.zip
 #RUN 7z e chess-engine.zip && rm chess-engine.zip && mv stockfish* chess-engine
 
@@ -32,8 +32,8 @@ RUN wget --no-check-certificate "https://abrok.eu/stockfish/builds/e31f97e3baa52
 COPY requirements.txt .
 RUN python3 -m pip install --no-cache-dir -r requirements.txt
 
-RUN chmod +x stockfish_22031913_x64_modern
-#RUN chmod +x fsf
+RUN chmod +x stockfish_x64_modern
+RUN chmod +x fsf
 #RUN chmod +x chess-engine
 # Engine name is here ^^^^^^
 
