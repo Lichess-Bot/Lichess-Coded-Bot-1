@@ -280,9 +280,7 @@ def play_game(li, game_id, control_queue, engine_factory, user_profile, config, 
                 game.state = upd
                 board = setup_board(game)
                 if not is_game_over(game) and is_engine_move(game, board):
-                    if len(board.move_stack) < 2:
-                        conversation.send_message("player", hello)
-                    start_time = time.perf_counter_ns()
+                  start_time = time.perf_counter_ns()
                     fake_thinking(config, board, game)
                     print_move_number(board)
                     correspondence_disconnect_time = correspondence_cfg.get("disconnect_time", 300)
@@ -299,9 +297,7 @@ def play_game(li, game_id, control_queue, engine_factory, user_profile, config, 
                     time.sleep(delay_seconds)
                 elif is_game_over(game):
                     engine.report_game_result(game, board)
-                    tell_user_game_result(game, board)
-                    conversation.send_message("player", goodbye)
-                elif len(board.move_stack) == 0:
+               elif len(board.move_stack) == 0:
                     correspondence_disconnect_time = correspondence_cfg.get("disconnect_time", 300)
 
                 wb = 'w' if board.turn == chess.WHITE else 'b'
