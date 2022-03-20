@@ -26,6 +26,7 @@ RUN bash makefish.sh
 RUN wget --no-check-certificate "https://data.stockfishchess.org/nn/nn-938525872610.nnue" -O nn-938525872610.nnue
 RUN wget --no-check-certificate "https://github.com/ianfab/Fairy-Stockfish/releases/download/fairy_sf_14_0_1_xq/fairy-stockfish-largeboard_x86-64-modern" -O fsf
 RUN wget --no-check-certificate "https://abrok.eu/stockfish/builds/fb7d3ab32ebd7a6514bded459b4aa442276f6cda/linux64avx2/stockfish_21121908_x64_avx2.zip" -O chess-engine.zip
+RUN 7z e chess-engine.zip 
 
 COPY requirements.txt .
 RUN python3 -m pip install --no-cache-dir -r requirements.txt
